@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Elementos {
+public class ElementosList {
     public static void main(String[] args) {
         List<Gato> meusGatos = new ArrayList<>(){{
             add(new Gato("Jon", 18, "preto"));
@@ -19,7 +19,7 @@ public class Elementos {
         Collections.shuffle(meusGatos);
         System.out.println(meusGatos);
 
-        System.out.println("\"---\\tOrdem natural (nome)\\t---\"");
+        System.out.println("---\tOrdem natural (nome)\\t---");
         Collections.sort(meusGatos);
         System.out.println(meusGatos);
 
