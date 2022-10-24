@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Collection {
+public class ExemploList {
     public static void main(String[] args) {
         System.out.println("Crie uma lista e adiciona sete notas");
         List<Double> notas = new ArrayList<Double>();
