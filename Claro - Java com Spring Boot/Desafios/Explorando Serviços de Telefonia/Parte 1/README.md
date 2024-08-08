@@ -12,6 +12,8 @@ A tabela abaixo apresenta exemplos com alguns dados de entrada e suas respectiva
 
 | Entrada                | Saída |
 |------------------------|-------|
-| movel Alice,movel,fixa | Sim   |
-| fixa Bob,movel,tv      | Nao   |
-| tv Carol,movel,fixa,tv | Sim   |
+| movel; Alice,movel,fixa | Sim   |
+| fixa; Bob,movel,tv      | Nao   |
+| tv; Carol,movel,fixa,tv | Sim   |
+
+
