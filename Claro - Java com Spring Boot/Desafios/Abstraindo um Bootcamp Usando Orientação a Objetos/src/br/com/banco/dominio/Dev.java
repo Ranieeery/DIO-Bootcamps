@@ -1,7 +1,8 @@
 package br.com.banco.dominio;
 
-import java.util.Objects;
 import java.util.Set;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.LinkedHashSet;
 
 public class Dev {
@@ -10,15 +11,22 @@ public class Dev {
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     public void inscreverBootcamp(Bootcamp bootcamp) {
-        
+        this.conteudosIncritos.addAll(bootcamp.getConteudos());
+        bootcamp.getDevsInscritos().add(this);
     }
 
     public void progredir() {
-
+        Optional<Conteudo> conteudo = this.conteudosIncritos.stream().findFirst();
+        if (conteudo.isPresent()) {
+            this.conteudosConcluidos.add(conteudo.get());
+            this.conteudosIncritos.remove(conteudo.get());
+        } else {
+            System.err.println("Você ainda não está matriculado em nenhum conteúdo");
+        }
     }
 
-    public void calcularTotalXp() {
-
+    public double calcularTotalXp() {
+        return this.conteudosConcluidos.stream().mapToDouble(Conteudo::calcularXp).sum();
     }
 
     public String getNome() {
@@ -47,10 +55,13 @@ public class Dev {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Dev dev = (Dev) o;
-        return Objects.equals(nome, dev.nome) && Objects.equals(conteudosIncritos, dev.conteudosIncritos) && Objects.equals(conteudosConcluidos, dev.conteudosConcluidos);
+        return Objects.equals(nome, dev.nome) && Objects.equals(conteudosIncritos, dev.conteudosIncritos)
+                && Objects.equals(conteudosConcluidos, dev.conteudosConcluidos);
     }
 
     @Override
