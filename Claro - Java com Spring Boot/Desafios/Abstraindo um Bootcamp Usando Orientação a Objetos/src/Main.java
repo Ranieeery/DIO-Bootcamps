@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 
+import br.com.banco.dominio.Conteudo;
 import br.com.banco.dominio.Curso;
 import br.com.banco.dominio.Mentoria;
 
@@ -18,5 +19,8 @@ public class Main {
         mentoria.setData(LocalDate.now());
 
         System.out.println(mentoria);
+
+        //Polimorfismo
+        Conteudo conteudo = new Curso();
     }
 }
