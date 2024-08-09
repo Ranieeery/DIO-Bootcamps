@@ -15,6 +15,10 @@ public class Dev {
         bootcamp.getDevsInscritos().add(this);
     }
 
+    public Dev(String nome) {
+        this.nome = nome;
+    }
+
     public void progredir() {
         Optional<Conteudo> conteudo = this.conteudosIncritos.stream().findFirst();
         if (conteudo.isPresent()) {
@@ -31,10 +35,6 @@ public class Dev {
 
     public String getNome() {
         return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public Set<Conteudo> getConteudosIncritos() {
