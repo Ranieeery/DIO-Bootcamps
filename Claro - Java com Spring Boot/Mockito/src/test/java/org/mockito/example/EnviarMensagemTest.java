@@ -2,12 +2,13 @@ package org.mockito.example;
 
 import org.mockito.Spy;
 import org.mockito.Mockito;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class EnviarMensagemTeste {
+public class EnviarMensagemTest {
 
     @Spy
     private EnviarMensagem enviarMensagem;
@@ -18,6 +19,9 @@ public class EnviarMensagemTeste {
 
         Mensagem mensagem = new Mensagem("Ola, mundo!");
         enviarMensagem.adicionarMensagem(mensagem);
+
         Mockito.verify(enviarMensagem).adicionarMensagem(mensagem);
+
+        Assertions.assertFalse(enviarMensagem.getMensagens().isEmpty());
     }
 }

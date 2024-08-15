@@ -10,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-public class ListaTeste {
+public class ListaTest {
 
     @Mock
     private List<String> letras;

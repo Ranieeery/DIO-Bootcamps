@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
-public class CadastrarPessoaTeste {
+public class CadastrarPessoaTest {
     @InjectMocks
     public CadastrarPessoa cadastrarPessoa;
 
