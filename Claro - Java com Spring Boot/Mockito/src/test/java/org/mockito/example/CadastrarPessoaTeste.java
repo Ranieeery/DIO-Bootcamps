@@ -34,5 +34,4 @@ public class CadastrarPessoaTeste {
         assertEquals("Casa", pessoa.getEndereco().getComplemento());
         assertEquals("Bairro 1", pessoa.getEndereco().getBairro());
     }
-
 }
