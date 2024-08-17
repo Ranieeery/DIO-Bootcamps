@@ -2,7 +2,7 @@ package org.mockito.example;
 
 public class ServicoEnvioEmail {
 
-    private PlataformaDeEnvio plataforma;
+    private PlataformaEnvio plataforma;
 
     void enviaEmail(String enderecoEmail, String mensagem, boolean formatoHtml) {
 

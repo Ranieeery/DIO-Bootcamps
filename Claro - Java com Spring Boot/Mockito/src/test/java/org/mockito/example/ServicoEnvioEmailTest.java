@@ -1,16 +1,16 @@
 package org.mockito.example;
 
-import org.mockito.*;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class ServicoEnvioEmailTest {
 
     @Mock
-    private PlataformaDeEnvio plataformaDeEnvio;
+    private PlataformaEnvio plataformaDeEnvio;
 
     @InjectMocks
     private ServicoEnvioEmail servicoEnvioEmail;
