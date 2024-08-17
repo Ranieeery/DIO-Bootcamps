@@ -18,12 +18,12 @@ public class GeradorNumeroTest {
     void validaGeracaoNumeros() {
         MockedStatic<GeradorNumero> gerador = Mockito.mockStatic(GeradorNumero.class);
 
-        List<Integer> integers1 = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+        List<Integer> integer1 = List.of(1, 2, 3, 4, 5, 6, 7, 8);
 
         gerador.when(() -> GeradorNumero.geraNumerosAleatorios(anyInt()))
-            .thenReturn(integers1);
+            .thenReturn(integer1);
 
-        Assertions.assertEquals(integers1, GeradorNumero.geraNumerosAleatorios(8));
+        Assertions.assertEquals(integer1, GeradorNumero.geraNumerosAleatorios(8));
     }
 
     @Test
@@ -31,10 +31,10 @@ public class GeradorNumeroTest {
 
         MockedStatic<GeradorNumero> gerador = Mockito.mockStatic(GeradorNumero.class);
 
-        List<Integer> integers2 = List.of(10, 9, 8, 6);
+        List<Integer> integer2 = List.of(10, 9, 8, 6);
 
-        gerador.when(GeradorNumero::geraNumerosAleatorios).thenReturn(integers2);
+        gerador.when(GeradorNumero::geraNumerosAleatorios).thenReturn(integer2);
 
-        Assertions.assertEquals(integers2, GeradorNumero.geraNumerosAleatorios());
+        Assertions.assertEquals(integer2, GeradorNumero.geraNumerosAleatorios());
     }
 }
