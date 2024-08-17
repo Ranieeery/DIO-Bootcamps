@@ -22,6 +22,7 @@ public class CadastrarPessoaTest {
     @Test
     void validarDadosCadastro() {
         DadosLocalizacao dadosLocalizacao = new DadosLocalizacao("MG", "Nova Lima", "Rua Cinco", "Casa", "Bairro 1");
+
         Mockito.when(apiCorreios.consultarCep("21400965")).thenReturn(dadosLocalizacao);
         Pessoa pessoa = cadastrarPessoa.cadastrarPessoa("João", "46524789920", LocalDate.of(1990, 1, 1), "21400965");
 
