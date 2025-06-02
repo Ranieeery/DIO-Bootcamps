@@ -23,9 +23,4 @@ public class BootcampApplication {
             System.out.println("Dados CEP: " + response);
         };
     }
-
-    @Bean
-    public Gson gson() {
-        return new Gson();
-    }
 }
