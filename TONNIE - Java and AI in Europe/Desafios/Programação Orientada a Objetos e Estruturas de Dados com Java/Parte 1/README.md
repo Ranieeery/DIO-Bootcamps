@@ -15,11 +15,13 @@ A entrada deve receber:
 A habilidade buscada e todas as habilidades dos candidatos devem ser comparadas **ignorando maiúsculas e minúsculas**.
 
 ## Saída
+
 Deverá retornar o nome de todos os candidatos que possuem a habilidade informada, um por linha, na ordem em que foram cadastrados.
 
 Se nenhum candidato possuir a habilidade, exiba a mensagem: “`Nenhum candidato encontrado`”
 
 ## Exemplos
+
 A tabela abaixo apresenta exemplos com alguns dados de entrada e suas respectivas saídas esperadas. Certifique-se de testar seu programa com esses exemplos e com outros casos possíveis.
 
 <table><thead>
