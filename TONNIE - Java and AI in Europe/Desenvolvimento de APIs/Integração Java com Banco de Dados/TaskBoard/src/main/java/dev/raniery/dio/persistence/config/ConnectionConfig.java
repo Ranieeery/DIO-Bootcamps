@@ -1,4 +1,4 @@
-package dev.raniery.dio.config;
+package dev.raniery.dio.persistence.config;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

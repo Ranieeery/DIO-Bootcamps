@@ -4,7 +4,7 @@ import dev.raniery.dio.strategy.MigrationStrategy;
 
 import java.sql.SQLException;
 
-import static dev.raniery.dio.config.ConnectionConfig.getConnection;
+import static dev.raniery.dio.persistence.config.ConnectionConfig.getConnection;
 
 public class Main {
     public static void main(String[] args) {
