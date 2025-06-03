@@ -1,0 +1,21 @@
+SET user1:name "Cristiano Pinheiro"
+GET user1:name
+
+SET user '{"username": "Lucas Santos", "age": 30}'
+GET user
+
+SET user2:name "João Silva" EX 60
+TTL user2:name
+PTTL user2:name
+PERSIST user2:name
+EXISTS user2:name
+
+LPUSH user1:hobbies "Books"
+LPUSH user1:hobbies "Music"
+LINDEX user1:hobbies 0
+LRANGE user1:hobbies 0 1
+
+TYPE user1:name
+TYPE user1:hobbies
+
+DEL user1:name
