@@ -11,10 +11,10 @@ public class BlockEntity {
 
     private OffsetDateTime blockedAt;
 
-    private String blockReason;
+    private String blockedReason;
 
     private OffsetDateTime unblockedAt;
 
-    private String unblockReason;
+    private String unblockedReason;
 
 }

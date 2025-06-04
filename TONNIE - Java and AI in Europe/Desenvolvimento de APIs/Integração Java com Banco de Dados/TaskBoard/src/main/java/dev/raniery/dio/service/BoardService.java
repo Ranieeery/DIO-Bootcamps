@@ -2,11 +2,13 @@ package dev.raniery.dio.service;
 
 import dev.raniery.dio.persistence.dao.BoardColumnDAO;
 import dev.raniery.dio.persistence.dao.BoardDAO;
+import dev.raniery.dio.persistence.entity.BoardColumnEntity;
 import dev.raniery.dio.persistence.entity.BoardEntity;
 import lombok.AllArgsConstructor;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 @AllArgsConstructor
 public class BoardService {
@@ -14,17 +16,20 @@ public class BoardService {
     private final Connection connection;
 
     public BoardEntity insert(final BoardEntity entity) throws SQLException {
-        var dao = new BoardDAO(connection);
-        var boardColumnDAO = new BoardColumnDAO(connection);
+
+        BoardDAO dao = new BoardDAO(connection);
+        BoardColumnDAO boardColumnDAO = new BoardColumnDAO(connection);
+
         try {
             dao.insert(entity);
-            var columns = entity.getBoardColumns().stream().map(c -> {
-                c.setBoard(entity);
-                return c;
-            }).toList();
+            List<BoardColumnEntity> columns = entity.getBoardColumns()
+                .stream()
+                .peek(c -> c.setBoard(entity)).toList();
+
             for (var column : columns) {
                 boardColumnDAO.insert(column);
             }
+
             connection.commit();
         } catch (SQLException e) {
             connection.rollback();
@@ -34,7 +39,8 @@ public class BoardService {
     }
 
     public boolean delete(final Long id) throws SQLException {
-        var dao = new BoardDAO(connection);
+
+        BoardDAO dao = new BoardDAO(connection);
 
         try {
             if (!dao.exists(id)) {
