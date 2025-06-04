@@ -21,7 +21,7 @@ public class BoardColumnDAO {
 
     private final Connection connection;
 
-    public BoardColumnEntity insert(final BoardColumnEntity entity) throws SQLException {
+    public void insert(final BoardColumnEntity entity) throws SQLException {
 
         String sql = "INSERT INTO BOARDS_COLUMNS (name, `order`, kind, board_id) VALUES (?, ?, ?, ?);";
 
@@ -37,7 +37,6 @@ public class BoardColumnDAO {
                 entity.setId(impl.getLastInsertID());
             }
 
-            return entity;
         }
     }
 

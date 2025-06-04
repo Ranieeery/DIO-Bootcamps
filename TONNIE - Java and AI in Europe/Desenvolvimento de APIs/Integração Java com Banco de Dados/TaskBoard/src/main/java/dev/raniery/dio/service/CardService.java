@@ -23,14 +23,12 @@ public class CardService {
 
     private final Connection connection;
 
-    public CardEntity create(final CardEntity entity) throws SQLException {
+    public void create(final CardEntity entity) throws SQLException {
 
         try {
             CardDAO dao = new CardDAO(connection);
             dao.insert(entity);
             connection.commit();
-
-            return entity;
         } catch (SQLException ex) {
             connection.rollback();
             throw ex;

@@ -17,7 +17,7 @@ public class CardDAO {
 
     private Connection connection;
 
-    public CardEntity insert(final CardEntity entity) throws SQLException {
+    public void insert(final CardEntity entity) throws SQLException {
 
         String sql = "INSERT INTO CARDS (title, description, board_column_id) values (?, ?, ?);";
 
@@ -32,7 +32,6 @@ public class CardDAO {
                 entity.setId(impl.getLastInsertID());
             }
         }
-        return entity;
     }
 
     public void moveToColumn(final Long columnId, final Long cardId) throws SQLException {

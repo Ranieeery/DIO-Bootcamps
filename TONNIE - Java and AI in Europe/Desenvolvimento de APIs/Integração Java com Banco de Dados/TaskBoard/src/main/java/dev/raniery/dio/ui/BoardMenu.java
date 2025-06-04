@@ -1,6 +1,5 @@
 package dev.raniery.dio.ui;
 
-import dev.raniery.dio.dto.BoardColumnDTO;
 import dev.raniery.dio.dto.BoardColumnInfoDTO;
 import dev.raniery.dio.dto.BoardDetailsDTO;
 import dev.raniery.dio.persistence.entity.BoardColumnEntity;

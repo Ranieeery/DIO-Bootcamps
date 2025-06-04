@@ -15,7 +15,7 @@ public class BoardService {
 
     private final Connection connection;
 
-    public BoardEntity insert(final BoardEntity entity) throws SQLException {
+    public void insert(final BoardEntity entity) throws SQLException {
 
         BoardDAO dao = new BoardDAO(connection);
         BoardColumnDAO boardColumnDAO = new BoardColumnDAO(connection);
@@ -35,7 +35,6 @@ public class BoardService {
             connection.rollback();
             throw e;
         }
-        return entity;
     }
 
     public boolean delete(final Long id) throws SQLException {

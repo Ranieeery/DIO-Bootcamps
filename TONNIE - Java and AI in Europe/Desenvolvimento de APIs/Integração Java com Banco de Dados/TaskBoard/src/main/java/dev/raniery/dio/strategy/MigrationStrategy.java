@@ -24,15 +24,17 @@ public class MigrationStrategy {
             System.setOut(new PrintStream(fos));
             System.setErr(new PrintStream(fos));
 
-            try (var jdbcConnection = new JdbcConnection(this.connection)) {
-                var liquibase = new Liquibase(
+            try (var jdbcConnection = new JdbcConnection(this.connection);
+                 var liquibase = new Liquibase(
                     "/db/changelog/db.changelog-main.yml",
-                    new ClassLoaderResourceAccessor(), jdbcConnection);
+                    new ClassLoaderResourceAccessor(), jdbcConnection)) {
                 liquibase.update();
             } catch (LiquibaseException e) {
                 e.printStackTrace();
                 System.setErr(err);
                 throw new RuntimeException("Migration failed", e);
+            } finally {
+                System.out.println("Liquibase migration completed successfully.");
             }
 
         } catch (IOException e) {
