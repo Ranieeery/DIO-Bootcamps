@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 @AllArgsConstructor
-public class BoardDao {
+public class BoardDAO {
 
     private Connection connection;
 
