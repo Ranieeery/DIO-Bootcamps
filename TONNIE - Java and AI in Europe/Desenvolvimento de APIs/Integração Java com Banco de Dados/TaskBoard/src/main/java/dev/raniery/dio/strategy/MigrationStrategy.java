@@ -26,8 +26,8 @@ public class MigrationStrategy {
 
             try (var jdbcConnection = new JdbcConnection(this.connection);
                  var liquibase = new Liquibase(
-                    "/db/changelog/db.changelog-main.yml",
-                    new ClassLoaderResourceAccessor(), jdbcConnection)) {
+                     "/db/changelog/db.changelog-main.yml",
+                     new ClassLoaderResourceAccessor(), jdbcConnection)) {
                 liquibase.update();
             } catch (LiquibaseException e) {
                 e.printStackTrace();
